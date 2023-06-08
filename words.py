@@ -7,12 +7,10 @@ print(words)
 vowels = 'аеєиіїоуюя'
 
 
-def replace_vowels(word, skip):
-    if not word.lower().startswith(skip.lower()):
-        for char in word:
-            if char in vowels:
-                word = word.replace(char, '#')
+def replace_vowels(word):
+    for char in vowels:
+        word = word.replace(char, '#')
     return word
 
 
-print(replace_vowels())
+print(' '.join([replace_vowels(word) for word in words]))
