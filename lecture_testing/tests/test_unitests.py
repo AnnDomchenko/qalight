@@ -36,7 +36,7 @@ class TestDates(BaseTest):
 
 class TestToday(TestDates):
     def test_is_2023(self):
-        self.assertEquals(self.now.year, 2023, 'Year not verified')
+        self.assertEqual(self.now.year, 2023, 'Year not verified')
         print('Year is verified')
 
     def test_is_not_winter(self):
