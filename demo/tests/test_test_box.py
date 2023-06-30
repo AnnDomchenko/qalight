@@ -1,4 +1,5 @@
 import pytest
+from selenium.common import NoSuchElementException
 
 from demo.data.testing_data import user_data
 from demo.pages.page_text_box import PageTextBox
@@ -26,7 +27,10 @@ class TestTextBox:
         page_text_box.open()
         page_text_box.set_email(user_data.get('email_incorrect'))
         page_text_box.submit()
-        assert page_text_box.is_error_in_email_present()
+        is_error_present = page_text_box.is_error_in_email_present()
+        with pytest.raises(NoSuchElementException):
+            page_text_box.get_result_email()
+        assert is_error_present
 
     def test_curr_addr(self):
         page_text_box = PageTextBox(self.driver)
