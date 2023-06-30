@@ -1,3 +1,4 @@
+from selenium.webdriver import ActionChains
 from selenium.webdriver.common.by import By
 from selenium.webdriver.remote.webdriver import WebDriver
 
@@ -42,6 +43,8 @@ class PageTextBox:
 
     def submit(self):
         submit_button = self.driver.find_element(*self.button_submit_loc)
+        action = ActionChains(self.driver).scroll_to_element(submit_button)
+        action.perform()
         submit_button.click()
 
     def get_result_name(self) -> str:
@@ -67,4 +70,3 @@ class PageTextBox:
     def get_result_perm_addr(self) -> str:
         result_perm_addr = self.driver.find_element(*self.result_perm_addr_loc).text
         return result_perm_addr.split(':')[1].strip()
-
