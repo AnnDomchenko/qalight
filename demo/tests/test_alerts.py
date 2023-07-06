@@ -5,7 +5,7 @@ import pytest
 from demo.pages.page_alerts import PageAlerts
 
 
-@pytest.mark.usefixtures('chrome')
+@pytest.mark.usefixtures('firefox')
 class TestAlerts:
 
     def test_just_alert(self):
