@@ -1,6 +1,7 @@
 version: "3"
 services:
   jenkins:
+    privileged: true
     build:
       context: .
       dockerfile: jenkins.Dockerfile

@@ -3,3 +3,4 @@ __pycache__
 jenkins_home
 reports
 .pytest_cache
+results
